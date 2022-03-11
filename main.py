@@ -24,6 +24,7 @@ class LogInWindow(): # login window
         global login
         login = Tk()
         login.title("SetPy")
+        login.resizable(0,0)
         login.geometry("400x400")
 
         self.menu1 = Menu(login)
@@ -32,7 +33,7 @@ class LogInWindow(): # login window
         file_menu = Menu(self.menu1)
         self.menu1.add_cascade(label="Options", menu=file_menu)
         file_menu.add_command(label="Help", command=HelpWindow)
-        file_menu.add_command(label="Quit",  command=login.quit)
+        file_menu.add_command(label="Quit",  command=login.destroy)
 
         self.text = Label(login, text="SetPy", font=('Forte', 34), fg='black', bg='#FFD39B', width=60)
         self.text.pack(ipady=50, pady=10, padx=10)
@@ -60,6 +61,7 @@ class NewMain():
     def __init__(self):
         newmain = Tk()
         newmain.title("SetPy App")
+        newmain.resizable(0,0)
         newmain.geometry("700x500")
         newmain.mainloop()
 
@@ -68,6 +70,7 @@ class HelpWindow():
     def __init__(self):
         help = Tk()
         help.title("Help")
+        help.resizable(0,0)
         help.geometry("400x500")
         help.mainloop()
 LogInWindow()
